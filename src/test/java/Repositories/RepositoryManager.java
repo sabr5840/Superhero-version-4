@@ -18,9 +18,9 @@ public class RepositoryManager {
 
     public IRepository getRepository(String label) {
         switch (label) {
-            case "db":
+            case "JDBC":
                 return context.getBean(RepositoryJDBC.class);
-            case "array":
+            case "Stub":
                 return context.getBean(RepositoryStub.class);
             default:
                 throw new IllegalArgumentException("Invalid repository label: " + label);
