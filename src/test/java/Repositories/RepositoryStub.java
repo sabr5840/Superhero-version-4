@@ -33,7 +33,7 @@ public class RepositoryStub implements IRepository {
     public List<Hero_DTO_CreationDate> getAllSuperheroes() {
         List<Hero_DTO_CreationDate> dtos = new ArrayList<>();
         for (Superhero superhero : superheroes) {
-            dtos.add(new Hero_DTO_CreationDate(superhero.getId(), superhero.getHeroName(), superhero.getCreationDate().getYear()));
+            dtos.add(new Hero_DTO_CreationDate(superhero.getId(), superhero.getHeroName(), superhero.getCreationDate()));
         }
         return dtos;
     }
@@ -43,7 +43,7 @@ public class RepositoryStub implements IRepository {
         List<Hero_DTO_CreationDate> dtos = new ArrayList<>();
         for (Superhero superhero : superheroes) {
             if (superhero.getHeroName().equalsIgnoreCase(heroName)) {
-                dtos.add(new Hero_DTO_CreationDate(superhero.getId(), superhero.getHeroName(), superhero.getCreationDate().getYear()));
+                dtos.add(new Hero_DTO_CreationDate(superhero.getId(), superhero.getHeroName(), superhero.getCreationDate()));
             }
         }
         return dtos;

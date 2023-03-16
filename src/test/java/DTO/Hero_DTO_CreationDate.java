@@ -11,10 +11,10 @@ public class Hero_DTO_CreationDate {
     private LocalDate creationDate;
 
     //Constructor that accepts the desired attributes and creates a new instance of the DTO class
-    public Hero_DTO_CreationDate(int id, String heroName, int creationDate) {
+    public Hero_DTO_CreationDate(int id, String heroName, LocalDate creationDate) {
         this.id = id;
         this.heroName = heroName;
-        this.creationDate = LocalDate.ofEpochDay(creationDate);
+        this.creationDate = creationDate;
     }
 
 
@@ -32,8 +32,8 @@ public class Hero_DTO_CreationDate {
         return creationDate;
     }
 
-    public void setCreationDate(int creationDate) {
-        this.creationDate = LocalDate.ofEpochDay(creationDate);
+    public void setCreationDate(LocalDate creationDate) {
+        this.creationDate = creationDate;
 
     }
 
