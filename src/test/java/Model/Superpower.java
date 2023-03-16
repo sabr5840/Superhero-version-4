@@ -2,9 +2,17 @@ package Model;
 
 public class Superpower {
 
+         //Field of attributes
         private int id;
         private String name;
 
+        //Constructor
+        public Superpower(int id, String name) {
+        this.id = id;
+        this.name = name;
+        }
+
+        //Getter and setter
         public int getId() {
             return id;
         }

@@ -5,7 +5,7 @@ import java.util.List;
 
 public class Superhero {
 
-
+        //Feild of attributes
         private int id;
         private String heroName;
         private String realName;
@@ -16,6 +16,7 @@ public class Superhero {
         private double power;
 
 
+        //Constructor
         public Superhero(String heroName, String realName, int creationDate, boolean isHuman, double power) {
             this.heroName = heroName;
             this.realName = realName;
@@ -25,7 +26,8 @@ public class Superhero {
         }
 
 
-    public int getId() {
+        //Getter and setter
+        public int getId() {
             return id;
         }
 
@@ -89,4 +91,5 @@ public class Superhero {
         public void setPower(double power) {
             this.power = power;
         }
+
 }

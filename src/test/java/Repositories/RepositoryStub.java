@@ -1,9 +1,9 @@
 package Repositories;
 
-import DTO.SuperheroNameCityDTO;
-import DTO.SuperheroNameRealNameNumberDTO;
-import DTO.SuperheroNameRealNameYearDTO;
-import DTO.SuperheroNameRealSuperpowerDTO;
+import DTO.Hero_DTO_City;
+import DTO.Hero_DTO_Power_Count;
+import DTO.Hero_DTO_CreationDate;
+import DTO.Hero_DTO_Superpowers;
 import Model.Superhero;
 import Model.Superpower;
 
@@ -30,63 +30,63 @@ public class RepositoryStub implements IRepository {
 
     //Represents the implementation of various methods in a RepositoryStub interface that provide access to a list of Superhero objects
     @Override
-    public List<SuperheroNameRealNameYearDTO> getAllSuperheroes() {
-        List<SuperheroNameRealNameYearDTO> dtos = new ArrayList<>();
+    public List<Hero_DTO_CreationDate> getAllSuperheroes() {
+        List<Hero_DTO_CreationDate> dtos = new ArrayList<>();
         for (Superhero superhero : superheroes) {
-            dtos.add(new SuperheroNameRealNameYearDTO(superhero.getHeroName(), superhero.getRealName(), superhero.getCreationDate().getYear()));
+            dtos.add(new Hero_DTO_CreationDate(superhero.getId(), superhero.getHeroName(), superhero.getCreationDate().getYear()));
         }
         return dtos;
     }
 
     @Override
-    public List<SuperheroNameRealNameYearDTO> getSuperheroesName(String heroName) {
-        List<SuperheroNameRealNameYearDTO> dtos = new ArrayList<>();
+    public List<Hero_DTO_CreationDate> getSuperheroesName(String heroName) {
+        List<Hero_DTO_CreationDate> dtos = new ArrayList<>();
         for (Superhero superhero : superheroes) {
             if (superhero.getHeroName().equalsIgnoreCase(heroName)) {
-                dtos.add(new SuperheroNameRealNameYearDTO(superhero.getHeroName(), superhero.getRealName(), superhero.getCreationDate().getYear()));
+                dtos.add(new Hero_DTO_CreationDate(superhero.getId(), superhero.getHeroName(), superhero.getCreationDate().getYear()));
             }
         }
         return dtos;
     }
 
     @Override
-    public List<SuperheroNameRealNameNumberDTO> getNumberOfPowers() {
-        List<SuperheroNameRealNameNumberDTO> dtos = new ArrayList<>();
+    public List<Hero_DTO_Power_Count> getNumberOfPowers() {
+        List<Hero_DTO_Power_Count> dtos = new ArrayList<>();
         for (Superhero superhero : superheroes) {
-            dtos.add(new SuperheroNameRealNameNumberDTO(superhero.getHeroName(), superhero.getRealName(), superhero.getSuperpowers().size()));
+            dtos.add(new Hero_DTO_Power_Count(superhero.getHeroName(), superhero.getSuperpowers().size()));
         }
         return dtos;
     }
 
     @Override
-    public List<SuperheroNameRealNameNumberDTO> getNumbrOfPowersName(String heroName) {
-        List<SuperheroNameRealNameNumberDTO> dtos = new ArrayList<>();
+    public List<Hero_DTO_Power_Count> getNumbrOfPowersName(String heroName) {
+        List<Hero_DTO_Power_Count> dtos = new ArrayList<>();
         for (Superhero superhero : superheroes) {
             if (superhero.getHeroName().equalsIgnoreCase(heroName)) {
-                dtos.add(new SuperheroNameRealNameNumberDTO(superhero.getHeroName(), superhero.getRealName(), superhero.getSuperpowers().size()));
+                dtos.add(new Hero_DTO_Power_Count(superhero.getHeroName(), superhero.getSuperpowers().size()));
             }
         }
         return dtos;
     }
 
     @Override
-    public List<SuperheroNameRealSuperpowerDTO> getSuperpower() {
-        List<SuperheroNameRealSuperpowerDTO> dtos = new ArrayList<>();
+    public List<Hero_DTO_Superpowers> getSuperpower() {
+        List<Hero_DTO_Superpowers> dtos = new ArrayList<>();
         for (Superhero superhero : superheroes) {
             for (Superpower superpower : superhero.getSuperpowers()) {
-                dtos.add(new SuperheroNameRealSuperpowerDTO(superhero.getHeroName(), superhero.getRealName(), superpower.getName()));
+                dtos.add(new Hero_DTO_Superpowers(superhero.getHeroName(), superpower.getName()));
             }
         }
         return dtos;
     }
 
     @Override
-    public List<SuperheroNameRealSuperpowerDTO> getSuperpowerName(String heroName) {
-        List<SuperheroNameRealSuperpowerDTO> dtos = new ArrayList<>();
+    public List<Hero_DTO_Superpowers> getSuperpowerName(String heroName) {
+        List<Hero_DTO_Superpowers> dtos = new ArrayList<>();
         for (Superhero superhero : superheroes) {
             if (superhero.getHeroName().equalsIgnoreCase(heroName)) {
                 for (Superpower superpower : superhero.getSuperpowers()) {
-                    dtos.add(new SuperheroNameRealSuperpowerDTO(superhero.getHeroName(), superhero.getRealName(), superpower.getName()));
+                    dtos.add(new Hero_DTO_Superpowers(superhero.getHeroName(), superpower.getName()));
                 }
             }
         }
@@ -94,21 +94,21 @@ public class RepositoryStub implements IRepository {
     }
 
     @Override
-    public List<SuperheroNameCityDTO> getHeroCity() {
-        List<SuperheroNameCityDTO> result = new ArrayList<>();
+    public List<Hero_DTO_City> getHeroCity() {
+        List<Hero_DTO_City> result = new ArrayList<>();
         for (Superhero superhero : superheroes) {
-            result.add(new SuperheroNameCityDTO(superhero.getHeroName(), superhero.getCity().getCityName()));
+            result.add(new Hero_DTO_City(superhero.getHeroName(), superhero.getCity().getCityName()));
         }
         return result;
     }
 
     @Override
-    public List<SuperheroNameCityDTO> getHeroCityName(String heroName) {
-        List<SuperheroNameCityDTO> searchResult = new ArrayList<>();
+    public List<Hero_DTO_City> getHeroCityName(String heroName) {
+        List<Hero_DTO_City> searchResult = new ArrayList<>();
 
         for (Superhero superhero : superheroes) {
             if (superhero.getHeroName().equals(heroName)) {
-                searchResult.add(new SuperheroNameCityDTO(superhero.getHeroName(), superhero.getCity().getName()));;
+                searchResult.add(new Hero_DTO_City(superhero.getHeroName(), superhero.getCity().getName()));;
             }
         }
 
