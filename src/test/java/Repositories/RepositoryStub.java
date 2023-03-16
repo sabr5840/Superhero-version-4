@@ -14,7 +14,7 @@ import java.util.List;
 
 //The purpose of having a RepositoryStub is to simulate data access and storage operations normally performed in a database in order to test and debug the application.
 
-public class SuperheroJDBC implements IRepository {
+public class RepositoryStub implements IRepository {
 
     //Creates a private list of objects of type Superhero called "superheroes" and initializes it as an empty ArrayList.
     private List<Superhero> superheroes = new ArrayList<>();
