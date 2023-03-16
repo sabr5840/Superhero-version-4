@@ -10,14 +10,17 @@ import Model.Superpower;
 import java.util.ArrayList;
 import java.util.List;
 
+
+
 //The purpose of having a RepositoryStub is to simulate data access and storage operations normally performed in a database in order to test and debug the application.
-public class RepositoryStub implements IRepository {
+
+public class SuperheroJDBC implements IRepository {
 
     //Creates a private list of objects of type Superhero called "superheroes" and initializes it as an empty ArrayList.
     private List<Superhero> superheroes = new ArrayList<>();
 
     //Initializes a type of Repository-Stub object and adds a superhero objects to a list of superheroes
-    public RepositoryStub() {
+    public void RepositoryStub() {
         superheroes.add(new Superhero("Scarlet Witch", "Wanda Maximoff", 1989, true, 3));
         superheroes.add(new Superhero("Captain Marvel", "Carol Danvers", 1938, true, 7));
         superheroes.add(new Superhero("Black Widow", "Natasha Romanoff", 1982, true, 2));
@@ -118,3 +121,11 @@ public class RepositoryStub implements IRepository {
 
 
 }
+
+
+
+
+
+
+
+
